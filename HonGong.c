@@ -54,6 +54,13 @@ Graph* insert_undirect(Graph* G,int u, int v)
 		}
 	return G;
 }
+//행렬 삭제하는 함수 
+Graph* deleteMatrix(Graph* G) {
+	for (int i = 0; i < G->V; i++)
+		free(G->Adj[i]);
+	free(G->Adj);
+	free(G);
+}
 //행렬 출력하는 함수
 void print_adj_mat(Graph* G) {
 	if (G->Adj == NULL) {
